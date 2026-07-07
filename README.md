@@ -59,7 +59,8 @@ vercel --prod
 
 - This frontend currently builds successfully as static pages.
 - If you later connect backend APIs, add required environment variables in Vercel Project Settings > Environment Variables.
-- You may see a warning about `metadataBase` during build; it does not block deployment.
+- `metadataBase` is set in app metadata for production URL resolution.
+- `vercel.json` is included to keep deployment settings explicit and Vercel-first.
 
 ## Scripts
 
