@@ -16,12 +16,12 @@ import {
   ChevronRight,
   Bell,
   Moon,
-  Sparkles,
   Menu,
   X,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AnimatedBackground } from "@/components/landing/animated-background";
+import { Logo } from "@/components/ui/logo";
 
 const sidebarItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: "/dashboard" },
@@ -59,24 +59,13 @@ export default function DashboardLayout({
         )}
       >
         {(!collapsed || mobile) && (
-          <Link href="/" className="flex items-center gap-2 min-w-0">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-glow flex-shrink-0">
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
-            <motion.span
-              initial={false}
-              animate={{ opacity: collapsed && !mobile ? 0 : 1 }}
-              className="text-base font-bold text-white whitespace-nowrap"
-            >
-              MarketScout
-            </motion.span>
+          <Link href="/" className="flex items-center min-w-0">
+            <Logo size={28} className="[&_[data-slot=wordmark]]:text-base" />
           </Link>
         )}
         {collapsed && !mobile && (
           <Link href="/">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-glow">
-              <Sparkles className="w-4 h-4 text-white" />
-            </div>
+            <Logo variant="icon" size={28} />
           </Link>
         )}
         {!mobile && (

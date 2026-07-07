@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Eye, EyeOff, Mail, Lock, User, Sparkles, ArrowRight, Github, Check } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, ArrowRight, Github, Check } from 'lucide-react';
 import { AnimatedBackground } from '@/components/landing/animated-background';
+import { Logo } from '@/components/ui/logo';
 
 const perks = [
   'Unlimited AI market research',
@@ -44,13 +45,8 @@ export default function SignupPage() {
           transition={{ duration: 0.6 }}
           className="hidden lg:block space-y-6"
         >
-          <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-glow">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-white">
-              MarketScout <span className="text-gradient">AI</span>
-            </span>
+          <Link href="/" className="inline-flex items-center">
+            <Logo size={36} className="[&_[data-slot=wordmark]]:text-2xl" />
           </Link>
 
           <div>
@@ -106,11 +102,8 @@ export default function SignupPage() {
 
             <div className="relative p-8">
               <div className="lg:hidden text-center mb-8">
-                <Link href="/" className="inline-flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
-                  </div>
-                  <span className="text-xl font-bold text-white">MarketScout AI</span>
+                <Link href="/" className="inline-flex items-center">
+                  <Logo size={30} className="[&_[data-slot=wordmark]]:text-xl" />
                 </Link>
               </div>
 
