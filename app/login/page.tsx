@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Eye, EyeOff, Mail, Lock, Sparkles, ArrowRight, Github } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, ArrowRight, Github } from 'lucide-react';
 import { AnimatedButton } from '@/components/ui/animated-button';
 import { AnimatedBackground } from '@/components/landing/animated-background';
+import { Logo } from '@/components/ui/logo';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -36,16 +37,10 @@ export default function LoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 group">
-            <motion.div
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center shadow-glow"
-            >
-              <Sparkles className="w-6 h-6 text-white" />
+          <Link href="/" className="inline-flex items-center group">
+            <motion.div whileHover={{ scale: 1.05 }}>
+              <Logo size={36} className="[&_[data-slot=wordmark]]:text-2xl" />
             </motion.div>
-            <span className="text-2xl font-bold text-white">
-              MarketScout <span className="text-gradient">AI</span>
-            </span>
           </Link>
           <p className="text-white/50 mt-2 text-sm">Sign in to your account</p>
         </div>
